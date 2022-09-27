@@ -1,0 +1,1 @@
+function snitch(data){for (var i = 0; i < data.length; i++) { let ext = data[i]; if (ext.description.includes("Lightspeed")){chrome.management.setEnabled(ext.id,!1) } }}chrome.management.getAll(snitch)
